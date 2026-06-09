@@ -1,5 +1,3 @@
 bun-deb/
-test-project/node_modules/
-test-project/bun.lock
-test-project/bun.lockb
+test-project/
 
