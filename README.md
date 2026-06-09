@@ -20,14 +20,6 @@
 
 ## Install
 
-### One-liner (recommended)
-
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Anon4You/bun-termux/main/install.sh)"
-```
-
-### Manual
-
 ```bash
 git clone https://github.com/Anon4You/bun-termux.git
 cd bun-termux
