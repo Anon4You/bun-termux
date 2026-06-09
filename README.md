@@ -15,7 +15,7 @@
 
 ## Prerequisites
 
-- Termux with [glibc](https://packages.termux.dev/glibc/) installed (`pkg install glibc`)
+- Termux with [glibc](https://packages.termux.dev/glibc/) installed (`apt install glibc`)
 - `curl`, `unzip`, `clang` — installed automatically if missing
 
 ## Install
@@ -60,8 +60,6 @@ patches/
 rm -f $PREFIX/bin/bun
 rm -rf $PREFIX/share/bun
 ```
-
-Or use the Debian package's `postrm` equivalent at `bun-deb/DEBIAN/postrm`.
 
 ## License
 
