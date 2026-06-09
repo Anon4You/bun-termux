@@ -17,5 +17,12 @@ if [ ${#MISSING[@]} -gt 0 ]; then
     exit 1
 fi
 
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+if [ ! -d "$PREFIX/glibc/lib" ]; then
+    echo "Missing glibc environment." >&2
+    echo "Install: pkg install glibc-repo && pkg install glibc" >&2
+    exit 1
+fi
+
 echo "  All dependencies found."
 exit 0

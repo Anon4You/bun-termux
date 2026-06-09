@@ -37,6 +37,11 @@ if [ ${#MISSING[@]} -gt 0 ]; then
     echo "  Install: pkg install ${MISSING[*]}" >&2
     exit 1
 fi
+if [ ! -d "$PREFIX/glibc/lib" ]; then
+    echo "  Missing glibc environment." >&2
+    echo "  Install: pkg install glibc-repo && pkg install glibc" >&2
+    exit 1
+fi
 echo "  All dependencies found."
 echo ""
 
