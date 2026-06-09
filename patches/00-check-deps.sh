@@ -12,16 +12,14 @@ for dep in "${DEPS[@]}"; do
 done
 
 if [ ${#MISSING[@]} -gt 0 ]; then
-    echo "Missing dependencies: ${MISSING[*]}" >&2
-    echo "Install them with: pkg install ${MISSING[*]}" >&2
-    exit 1
+    echo "  Installing missing dependencies: ${MISSING[*]}"
+    apt install -y "${MISSING[@]}"
 fi
 
 PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
 if [ ! -d "$PREFIX/glibc/lib" ]; then
-    echo "Missing glibc environment." >&2
-    echo "Install: pkg install glibc-repo && pkg install glibc" >&2
-    exit 1
+    echo "  Installing glibc-repo and glibc..."
+    apt install -y glibc-repo glibc
 fi
 
 echo "  All dependencies found."
